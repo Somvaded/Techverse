@@ -153,9 +153,9 @@ app.post(
       shippingAddress,
     } = req.body;
 
-    const itemsPriceNumber = parseFloat(itemsPrice);
-    const taxPriceNumber = parseFloat(taxPrice);
-    const shippingPriceNumber = parseFloat(shippingPrice);
+    const itemsPriceNumber = parseFloat(itemsPrice).toFixed(2);
+    const taxPriceNumber = parseFloat(taxPrice).toFixed(2);
+    const shippingPriceNumber = parseFloat(shippingPrice).toFixed(2);
 
     // Calculate total amount including tax and shipping
     const lineItems = orderItems.map((item) => {
@@ -169,7 +169,7 @@ app.post(
               product_image: item.image,
             },
           },
-          unit_amount: item.price * 100,
+          unit_amount: Number(parseFloat(item.price * 100).toFixed(2)),
         },
         quantity: item.qty,
       };
@@ -182,7 +182,7 @@ app.post(
         product_data: {
           name: "Tax",
         },
-        unit_amount: taxPriceNumber * 100,
+        unit_amount: Number(parseFloat(taxPriceNumber * 100).toFixed(2)),
       },
       quantity: 1,
     });
@@ -194,7 +194,7 @@ app.post(
         product_data: {
           name: "Shipping",
         },
-        unit_amount: shippingPriceNumber * 100,
+        unit_amount: Number(parseFloat(shippingPriceNumber * 100).toFixed(2)),
       },
       quantity: 1,
     });
