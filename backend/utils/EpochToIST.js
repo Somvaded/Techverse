@@ -1,6 +1,5 @@
 
 export const TimeConverter = (stripeEpochTimestamp) => {
-    const stripeEpochTimestamp = 1689913131;
 
     // Convert to a Date object (UTC time)
     const dateObject = new Date(stripeEpochTimestamp * 1000); // Stripe uses timestamps in seconds, so multiply by 1000 to get milliseconds
