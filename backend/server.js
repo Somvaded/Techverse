@@ -13,6 +13,7 @@ import asyncHandler from "./middleware/asyncHandler.js";
 import Order from "./models/orderModel.js";
 import uploadRoutes from './routes/uploadRoutes.js'
 import cors from 'cors';
+import { TimeConverter } from "./utils/EpochToIST.js";
 
 
 dotenv.config();
@@ -108,7 +109,7 @@ app.post(
             paymentResult: {
               id: paymentId,
               status: paymentStatus,
-              update_time: paymentTime,
+              update_time: TimeConverter(paymentTime),
               email_address: paymentEmail,
             },
           });
