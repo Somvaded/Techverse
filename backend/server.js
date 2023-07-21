@@ -121,8 +121,8 @@ app.post(
 
       default:
         console.log(`Unhandled event type ${event.type}`);
-        res.json({ message: "Unhandled event type" });
     }
+    res.status(200).json({received: true});
   }
 );
 
