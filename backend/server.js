@@ -22,9 +22,10 @@ const port = process.env.PORT || 5000;
 connectDB();
 const app = express();
 
+
 app.use(
   cors({
-    origin: ["https://checkout.stripe.com",process.env.DOMAIN],
+    origin: "*", // Allow any domain
   })
 );
 
