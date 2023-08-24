@@ -25,7 +25,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*", // Allow any domain
+    origin: "*", credentials: true // Allow any domain
   })
 );
 
