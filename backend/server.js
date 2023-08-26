@@ -25,7 +25,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://techverse-dtq7.onrender.com'], credentials: true // Allow any domain
+    origin: '*', credentials: true // Allow any domain
   })
 );
 
