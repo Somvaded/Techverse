@@ -25,7 +25,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000" , "https://playtech-pr79hn0k2-the-promised-neverland.vercel.app/", "https://techverse-dtq7.onrender.com"], credentials: true // Allow any domain
+    origin: ["http://localhost:3000" , "https://playtech-pr79hn0k2-the-promised-neverland.vercel.app", "https://techverse-dtq7.onrender.com"], credentials: true // Allow any domain
   })
 );
 
