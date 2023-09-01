@@ -17,6 +17,8 @@ const createOrder = asyncHandler(async (req, res) => {
   } = req.body;
 
   let paymentResult;
+  let isPaid=false;
+  let paidAt;
 
   if (paymentDetails) {
     paymentResult = {
@@ -25,7 +27,9 @@ const createOrder = asyncHandler(async (req, res) => {
       status: paymentDetails.status, // payment status
       update_time: paymentDetails.update_time, // payment success time
       email_address: paymentDetails.payer.email_address, // email address of payee
-    };
+    };      
+    isPaid: true,
+    paidAt: Date.now(),
   }
 
   
@@ -39,8 +43,8 @@ const createOrder = asyncHandler(async (req, res) => {
     itemsPrice,
     shippingPrice,
     totalPrice,
-    isPaid: true,
-    paidAt: Date.now(),
+    isPaid,
+    paidAt,
     paymentResult,
   });
   const createdOrder = await order.save();
