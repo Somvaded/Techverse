@@ -25,7 +25,7 @@ const app = express();
 
 // Enable CORS with credentials support
 app.use(cors({
-  origin: '*', // You can replace this with the specific origins you want to allow
+  origin: 'https://playtech-six.vercel.app', // You can replace this with the specific origins you want to allow
   credentials: true, // Enable credentials support (cookies, HTTP authentication, etc.)
 }));
 
