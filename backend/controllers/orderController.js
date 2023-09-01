@@ -28,8 +28,8 @@ const createOrder = asyncHandler(async (req, res) => {
       update_time: paymentDetails.update_time, // payment success time
       email_address: paymentDetails.payer.email_address, // email address of payee
     };      
-    isPaid: true,
-    paidAt: Date.now(),
+    isPaid= true,
+    paidAt= Date.now(),
   }
 
   
