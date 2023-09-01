@@ -23,11 +23,12 @@ connectDB();
 const app = express();
 
 
-app.use(
-  cors({
-    origin: ["*"], credentials: true // Allow any domain
-  })
-);
+// Enable CORS with credentials support
+app.use(cors({
+  origin: '*', // You can replace this with the specific origins you want to allow
+  credentials: true, // Enable credentials support (cookies, HTTP authentication, etc.)
+}));
+
 
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
